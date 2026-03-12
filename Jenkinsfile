@@ -10,13 +10,12 @@ node {
         sh "npm install"
         }
     }
-/*
 stage('ExecuteSonarQubeReport'){
-nodejs(nodeJSInstallationName: 'nodejs22.40.0'){
+nodejs(nodeJSInstallationName: 'nodejs25.8.1'){
 sh "npm run sonar"
 }
 }
-
+/*
 
 stage('UploadArtifactsIntoNexus'){
 sh "npm publish"
