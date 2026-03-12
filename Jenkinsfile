@@ -1,20 +1,22 @@
-node{
-
-stage('CheckOutCode'){
-git credentialsId: 'f52a7301-4cbc-4389-91fd-0e6ef69c493d', url: 'https://github.com/MithunTechnologiesDevOps/nodejs-app-mss.git'
-}
-
-stage('Build'){
-nodejs(nodeJSInstallationName: 'nodejs22.40.0'){
-sh "npm install"
-}
-}
-
-stage('ExecuteSonarQubeReport'){
-nodejs(nodeJSInstallationName: 'nodejs22.40.0'){
-sh "npm run sonar"
-}
-}
+node {
+    stage('CheckOutCode')
+    {
+        git credentialsId: '17cbc593-ebf6-481d-8538-ceeee47a499e', url: 'https://github.com/M-sDevOpsCareer/Nodejs_project.git'
+    }
+    stage('build')
+    {
+        nodejs(nodeJSInstallationName: 'nodejs25.8.1')
+        {
+        sh "npm install"
+        }
+    }
+    stage('ExecuteSonarQubeReport')
+    {
+       nodejs(nodeJSInstallationName: 'nodejs25.8.1')
+       {
+          sh "npm run sonar"
+       }
+    }
 
 /*
 stage('UploadArtifactsIntoNexus'){
