@@ -26,11 +26,11 @@ node {
 stage('UploadArtifactsIntoNexus'){
 sh "npm publish"
 }
-*/
+
 
 stage('RunNodeJsApp'){
 sh "npm start"
 }
-
+*/
 }
 
