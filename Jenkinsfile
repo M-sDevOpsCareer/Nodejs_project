@@ -5,14 +5,14 @@ node {
     }
     stage('build')
     {
-        nodejs(nodeJSInstallationName: 'nodejs25.8.1')
+        nodejs(nodeJSInstallationName: 'nodejs17.3.1')
         {
         sh "npm install"
         }
     }
     stage('ExecuteSonarQubeReport')
     {
-       nodejs(nodeJSInstallationName: 'nodejs25.8.1')
+       nodejs(nodeJSInstallationName: 'nodejs17.3.1')
        {
           sh "npm run sonar"
        }
